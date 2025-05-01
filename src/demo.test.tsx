@@ -1,8 +1,10 @@
-import { test } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { afterEach, test } from "vitest";
+import { cleanup, render, screen } from "@testing-library/react";
 import { createMemoryRouter, RouterProvider, useNavigate } from "react-router";
 import { RouterProvider as RouterProviderDOM } from "react-router/dom";
 import userEvent from "@testing-library/user-event";
+
+afterEach(cleanup);
 
 test("react-router/dom", async () => {
   const user = userEvent.setup();
